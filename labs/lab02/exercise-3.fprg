@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="exercise-3"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-01 11:26:38 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wMTsxMTowOTowNiBBTTsyNzM1"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wMTsxMToyNjozOCBBTTs0OzI4NTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <input variable="numHour"/>
+            <declare name="numHour" type="Real" array="False" size=""/>
+            <declare name="totalPricePerNight" type="Integer" array="False" size=""/>
+            <assign variable="totalPricePerNight" expression="numHour * 0.218"/>
+            <output expression="totalPricePerNight" newline="True"/>
+            <declare name="totalPricePerMonth" type="Integer" array="False" size=""/>
+            <assign variable="totalPricePerMonth" expression="totalPricePerNight * 30"/>
+            <output expression="totalPricePerMonth" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

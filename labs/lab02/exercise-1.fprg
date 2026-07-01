@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="exercise-1"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-01 10:59:30 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wMTsxMDo0MjozMiBBTTsyNzMw"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wMTsxMDo1OTozMCBBTTs1OzI4NDg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="totalMoneyRinggit" type="Integer" array="False" size=""/>
+            <input variable="totalMoneyRinggit"/>
+            <assign variable="deductedRinggit" expression="totalMoneyRinggit - totalMoneyRinggit * 2 / 100"/>
+            <declare name="totalBath" type="Integer" array="False" size=""/>
+            <assign variable="totalBath" expression="totalMoneyRinggit * 8.15"/>
+            <output expression="totalBath" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

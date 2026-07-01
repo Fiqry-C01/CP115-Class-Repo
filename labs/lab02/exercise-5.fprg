@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="exercise-5"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-01 11:31:01 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wMTsxMToyNjozOSBBTTsyNzQw"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wMTsxMTozMTowMSBBTTsxOzI4MzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numPhoto" type="Real" array="False" size=""/>
+            <input variable="numPhoto"/>
+            <declare name="totalPrice" type="Integer" array="False" size=""/>
+            <assign variable="totalPrice" expression="numPhoto * 0.50"/>
+            <assign variable="totalPrice" expression="totalPrice + 2"/>
+        </body>
+    </function>
+</flowgorithm>

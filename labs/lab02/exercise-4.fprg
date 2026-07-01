@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="exercise-4"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-01 11:23:02 AM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wMTsxMToxNzo1NyBBTTsyNzQw"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0wMTsxMToyMzowMiBBTTsxOzI4MzU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="totalKM" type="Integer" array="False" size=""/>
+            <input variable="totalKM"/>
+            <declare name="KMper100" type="Integer" array="False" size=""/>
+            <assign variable="KMper100" expression="totalKM / 100"/>
+            <declare name="totalPrice" type="Integer" array="False" size=""/>
+            <assign variable="totalPrice" expression="(KMper100 * 8)* 2.05"/>
+            <output expression="totalPrice" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
