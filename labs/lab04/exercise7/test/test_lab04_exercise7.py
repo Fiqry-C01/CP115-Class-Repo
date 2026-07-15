@@ -6,12 +6,10 @@ import os
 
 @pytest.fixture
 def exercise_path():
-    """Path to the student's solution file."""
-    return os.path.join(os.path.dirname(os.path.dirname(__file__)), 'lab-03-5.py')
+    return os.path.join(os.path.dirname(os.path.dirname(__file__)), 'lab-4-7.py')
 
 
 def run_exercise(exercise_path, inputs):
-    """Run the solution with the given stdin and return its stdout."""
     process = subprocess.Popen(
         [sys.executable, exercise_path],
         stdin=subprocess.PIPE,
@@ -30,7 +28,6 @@ def run_exercise(exercise_path, inputs):
 
 
 def read_numbers(output, count, context):
-    """Parse exactly `count` numbers (one per line) from the output, or fail clearly."""
     lines = output.strip().split('\n') if output.strip() else []
     if len(lines) != count:
         pytest.fail(
@@ -46,14 +43,35 @@ def read_numbers(output, count, context):
         )
 
 
-@pytest.mark.parametrize("packsEaten", [1, 2, 3, 4, 5, 7, 10, 20, 100])
-def test_cookie_calories(exercise_path, packsEaten):
-    """totalCalories = servings (10 per pack) * 300 calories."""
-    context = f"input packsEaten={packsEaten}"
-    output = run_exercise(exercise_path, f"{packsEaten}\n")
+def thermostat_power(tempRoom, tempTarget):
+    if tempRoom < tempTarget:
+        power = (tempTarget - tempRoom) * 10
+    elif tempRoom > tempTarget:
+        power = (tempRoom - tempTarget) * 8
+    else:
+        power = 0
+    return min(power, 100)
+
+
+@pytest.mark.parametrize("tempRoom,tempTarget", [
+    (20, 25),
+    (25, 20),
+    (20, 20),
+    (10, 25),
+    (30, 10),
+    (22, 25),
+    (28, 25),
+    (25, 35),
+    (35, 25),
+    (0, 0),
+])
+def test_thermostat_power(exercise_path, tempRoom, tempTarget):
+    context = f"inputs tempRoom={tempRoom}, tempTarget={tempTarget}"
+    inputs = f"{tempRoom}\n{tempTarget}\n"
+    output = run_exercise(exercise_path, inputs)
     (result,) = read_numbers(output, 1, context)
 
-    expected = round(packsEaten * 10 * 300, 2)
+    expected = round(thermostat_power(tempRoom, tempTarget), 2)
     got = round(result, 2)
 
     assert got == expected, f"{context} -> expected {expected} but got {got}"
