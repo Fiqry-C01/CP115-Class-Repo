@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="lab-4-6"/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-07-15 12:21:23 PM"/>
+        <attribute name="created" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0xNTsxMjowMDo0MiBQTTsyNzQ3"/>
+        <attribute name="edited" value="VXNlcjtERVNLVE9QLUozOVAxTlQ7MjAyNi0wNy0xNTsxMjoyMToyMyBQTTsxOzI4NTc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="minutesBefore" type="Real" array="False" size=""/>
+            <declare name="membership" type="Boolean" array="False" size=""/>
+            <input variable="minutesBefore"/>
+            <input variable="membership"/>
+            <declare name="price" type="Integer" array="False" size=""/>
+            <if expression="membership == true">
+                <then>
+                    <assign variable="price" expression="80 + (80 * 0.15)"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="minutesBefore &gt;= 30">
+                <then>
+                    <assign variable="price" expression="price - 15"/>
+                </then>
+                <else>
+                    <if expression="minutesBefore &lt;= 0">
+                        <then>
+                            <output expression="&quot;Cannot enter and dosen't have to pay&quot;" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </else>
+            </if>
+            <output expression="price" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
