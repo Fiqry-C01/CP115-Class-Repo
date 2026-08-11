@@ -1,16 +1,16 @@
-name: Lab 03 Tests
+name: Lab 04 Tests
 
 on:
   push:
     paths:
-      - 'labs/lab03/**'
+      - 'labs/lab04/**'
 
 jobs:
   test:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: labs/lab03
+        working-directory: labs/lab04
 
     steps:
       - uses: actions/checkout@v3
@@ -25,19 +25,29 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
 
-      # --- Exercise 1 (worked example: files only, no test) ---
+      # --- Worked example (files only, no test) ---
+      - name: Example - verify files exist
+        if: always()
+        run: |
+          test -f example/lab-4-0.png
+          test -f example/lab-4-0.py
+
+      # --- Exercise 1 ---
       - name: Exercise 1 - verify files exist
         if: always()
         run: |
-          test -f exercise1/lab-03-1.fprg
-          test -f exercise1/lab-03-1.py
+          test -f exercise1/lab-4-1.png
+          test -f exercise1/lab-4-1.py
+      - name: Exercise 1 - run tests
+        if: always()
+        run: python -m pytest exercise1/test/ --tb=no -q --no-header
 
       # --- Exercise 2 ---
       - name: Exercise 2 - verify files exist
         if: always()
         run: |
-          test -f exercise2/lab-03-2.fprg
-          test -f exercise2/lab-03-2.py
+          test -f exercise2/lab-4-2.png
+          test -f exercise2/lab-4-2.py
       - name: Exercise 2 - run tests
         if: always()
         run: python -m pytest exercise2/test/ --tb=no -q --no-header
@@ -46,8 +56,8 @@ jobs:
       - name: Exercise 3 - verify files exist
         if: always()
         run: |
-          test -f exercise3/lab-03-3.fprg
-          test -f exercise3/lab-03-3.py
+          test -f exercise3/lab-4-3.png
+          test -f exercise3/lab-4-3.py
       - name: Exercise 3 - run tests
         if: always()
         run: python -m pytest exercise3/test/ --tb=no -q --no-header
@@ -56,8 +66,8 @@ jobs:
       - name: Exercise 4 - verify files exist
         if: always()
         run: |
-          test -f exercise4/lab-03-4.fprg
-          test -f exercise4/lab-03-4.py
+          test -f exercise4/lab-4-4.png
+          test -f exercise4/lab-4-4.py
       - name: Exercise 4 - run tests
         if: always()
         run: python -m pytest exercise4/test/ --tb=no -q --no-header
@@ -66,8 +76,8 @@ jobs:
       - name: Exercise 5 - verify files exist
         if: always()
         run: |
-          test -f exercise5/lab-03-5.fprg
-          test -f exercise5/lab-03-5.py
+          test -f exercise5/lab-4-5.png
+          test -f exercise5/lab-4-5.py
       - name: Exercise 5 - run tests
         if: always()
         run: python -m pytest exercise5/test/ --tb=no -q --no-header
@@ -76,8 +86,8 @@ jobs:
       - name: Exercise 6 - verify files exist
         if: always()
         run: |
-          test -f exercise6/lab-03-6.fprg
-          test -f exercise6/lab-03-6.py
+          test -f exercise6/lab-4-6.png
+          test -f exercise6/lab-4-6.py
       - name: Exercise 6 - run tests
         if: always()
         run: python -m pytest exercise6/test/ --tb=no -q --no-header
@@ -86,8 +96,8 @@ jobs:
       - name: Exercise 7 - verify files exist
         if: always()
         run: |
-          test -f exercise7/lab-03-7.fprg
-          test -f exercise7/lab-03-7.py
+          test -f exercise7/lab-4-7.png
+          test -f exercise7/lab-4-7.py
       - name: Exercise 7 - run tests
         if: always()
         run: python -m pytest exercise7/test/ --tb=no -q --no-header
@@ -96,8 +106,18 @@ jobs:
       - name: Exercise 8 - verify files exist
         if: always()
         run: |
-          test -f exercise8/lab-03-8.fprg
-          test -f exercise8/lab-03-8.py
+          test -f exercise8/lab-4-8.png
+          test -f exercise8/lab-4-8.py
       - name: Exercise 8 - run tests
         if: always()
         run: python -m pytest exercise8/test/ --tb=no -q --no-header
+
+      # --- Exercise 9 ---
+      - name: Exercise 9 - verify files exist
+        if: always()
+        run: |
+          test -f exercise9/lab-4-9.png
+          test -f exercise9/lab-4-9.py
+      - name: Exercise 9 - run tests
+        if: always()
+        run: python -m pytest exercise9/test/ --tb=no -q --no-header
