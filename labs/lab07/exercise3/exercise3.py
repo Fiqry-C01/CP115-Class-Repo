@@ -2,7 +2,9 @@ name = input()
 price = float(input())
 quantity = int(input())
 member_answer = input()
-
+order_total = price * quantity
+free_shipping = order_total >= 100
+is_member = bool(member_answer == "yes")
 
 
 print(name.upper())
